@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figure 1: Mean absolute cross-industry correlation</title>
+  <style>
+    :root {
+      --color-white: #FFFFFF;
+      --color-ink: #000000;
+      --color-red: #C8102E;
+      --color-gold: #A4804A;
+      --color-secondary: #555555;
+      --color-border: #CCCCCC;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-white: #111111;
+        --color-ink: #F0F0F0;
+        --color-red: #E8243A;
+        --color-gold: #C49A5A;
+        --color-secondary: #999999;
+        --color-border: #333333;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--color-white);
+      color: var(--color-ink);
+      font-family: 'Real Head Pro', 'FF Real', Lato, sans-serif;
+    }
+    #chart {
+      width: 100vw;
+      min-height: 640px;
+      padding: 24px;
+    }
+    .chart-title {
+      font-family: 'Real Head Pro', 'FF Real', Lato, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      fill: var(--color-ink);
+    }
+    .chart-subtitle, .axis-label, .tick text, .annotation-label, .source-line,
+    .legend-label, .small-label {
+      font-family: 'Real Head Pro', 'FF Real', Lato, sans-serif;
+      fill: var(--color-secondary);
+    }
+    .tick line, .axis-domain, .gridline {
+      stroke: var(--color-border);
+    }
+    .tooltip {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0;
+      max-width: 260px;
+      padding: 8px 10px;
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-gold);
+      background: var(--color-white);
+      color: var(--color-ink);
+      font: 13px/1.35 'Real Head Pro', 'FF Real', Lato, sans-serif;
+      box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="chart" role="main"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script>
+    const FALLBACK_DATA = [{"year":1926,"meanAbsCorrelation":0.256022,"pairsUsed":780,"tradingDays":150},{"year":1927,"meanAbsCorrelation":0.237198,"pairsUsed":820,"tradingDays":301},{"year":1928,"meanAbsCorrelation":0.382446,"pairsUsed":820,"tradingDays":295},{"year":1929,"meanAbsCorrelation":0.589388,"pairsUsed":861,"tradingDays":291},{"year":1930,"meanAbsCorrelation":0.445465,"pairsUsed":903,"tradingDays":298},{"year":1931,"meanAbsCorrelation":0.498566,"pairsUsed":903,"tradingDays":300},{"year":1932,"meanAbsCorrelation":0.471357,"pairsUsed":903,"tradingDays":302},{"year":1933,"meanAbsCorrelation":0.589659,"pairsUsed":903,"tradingDays":285},{"year":1934,"meanAbsCorrelation":0.527797,"pairsUsed":903,"tradingDays":301},{"year":1935,"meanAbsCorrelation":0.36794,"pairsUsed":903,"tradingDays":301},{"year":1936,"meanAbsCorrelation":0.398423,"pairsUsed":903,"tradingDays":301},{"year":1937,"meanAbsCorrelation":0.608907,"pairsUsed":903,"tradingDays":299},{"year":1938,"meanAbsCorrelation":0.596826,"pairsUsed":903,"tradingDays":301},{"year":1939,"meanAbsCorrelation":0.539082,"pairsUsed":903,"tradingDays":300},{"year":1940,"meanAbsCorrelation":0.548118,"pairsUsed":903,"tradingDays":302},{"year":1941,"meanAbsCorrelation":0.418594,"pairsUsed":903,"tradingDays":301},{"year":1942,"meanAbsCorrelation":0.316046,"pairsUsed":903,"tradingDays":301},{"year":1943,"meanAbsCorrelation":0.461708,"pairsUsed":903,"tradingDays":301},{"year":1944,"meanAbsCorrelation":0.386975,"pairsUsed":903,"tradingDays":298},{"year":1945,"meanAbsCorrelation":0.473086,"pairsUsed":903,"tradingDays":286},{"year":1946,"meanAbsCorrelation":0.67782,"pairsUsed":903,"tradingDays":281},{"year":1947,"meanAbsCorrelation":0.533311,"pairsUsed":903,"tradingDays":283},{"year":1948,"meanAbsCorrelation":0.557369,"pairsUsed":903,"tradingDays":283},{"year":1949,"meanAbsCorrelation":0.440026,"pairsUsed":903,"tradingDays":282},{"year":1950,"meanAbsCorrelation":0.516788,"pairsUsed":903,"tradingDays":281},{"year":1951,"meanAbsCorrelation":0.421147,"pairsUsed":903,"tradingDays":283},{"year":1952,"meanAbsCorrelation":0.31227,"pairsUsed":903,"tradingDays":271},{"year":1953,"meanAbsCorrelation":0.441809,"pairsUsed":903,"tradingDays":251},{"year":1954,"meanAbsCorrelation":0.294151,"pairsUsed":903,"tradingDays":252},{"year":1955,"meanAbsCorrelation":0.498752,"pairsUsed":903,"tradingDays":252},{"year":1956,"meanAbsCorrelation":0.411001,"pairsUsed":903,"tradingDays":251},{"year":1957,"meanAbsCorrelation":0.494823,"pairsUsed":903,"tradingDays":252},{"year":1958,"meanAbsCorrelation":0.329097,"pairsUsed":903,"tradingDays":252},{"year":1959,"meanAbsCorrelation":0.341014,"pairsUsed":903,"tradingDays":253},{"year":1960,"meanAbsCorrelation":0.401895,"pairsUsed":903,"tradingDays":252},{"year":1961,"meanAbsCorrelation":0.294318,"pairsUsed":903,"tradingDays":250},{"year":1962,"meanAbsCorrelation":0.636686,"pairsUsed":903,"tradingDays":252},{"year":1963,"meanAbsCorrelation":0.42008,"pairsUsed":1081,"tradingDays":251},{"year":1964,"meanAbsCorrelation":0.256562,"pairsUsed":1081,"tradingDays":253},{"year":1965,"meanAbsCorrelation":0.393402,"pairsUsed":1128,"tradingDays":252},{"year":1966,"meanAbsCorrelation":0.522102,"pairsUsed":1128,"tradingDays":252},{"year":1967,"meanAbsCorrelation":0.392492,"pairsUsed":1128,"tradingDays":251},{"year":1968,"meanAbsCorrelation":0.44216,"pairsUsed":1128,"tradingDays":226},{"year":1969,"meanAbsCorrelation":0.540535,"pairsUsed":1176,"tradingDays":250},{"year":1970,"meanAbsCorrelation":0.637114,"pairsUsed":1176,"tradingDays":254},{"year":1971,"meanAbsCorrelation":0.534972,"pairsUsed":1176,"tradingDays":253},{"year":1972,"meanAbsCorrelation":0.40357,"pairsUsed":1176,"tradingDays":251},{"year":1973,"meanAbsCorrelation":0.58824,"pairsUsed":1176,"tradingDays":252},{"year":1974,"meanAbsCorrelation":0.634917,"pairsUsed":1176,"tradingDays":253},{"year":1975,"meanAbsCorrelation":0.575613,"pairsUsed":1176,"tradingDays":253},{"year":1976,"meanAbsCorrelation":0.550563,"pairsUsed":1176,"tradingDays":253},{"year":1977,"meanAbsCorrelation":0.525224,"pairsUsed":1176,"tradingDays":252},{"year":1978,"meanAbsCorrelation":0.683942,"pairsUsed":1176,"tradingDays":252},{"year":1979,"meanAbsCorrelation":0.630739,"pairsUsed":1176,"tradingDays":253},{"year":1980,"meanAbsCorrelation":0.624967,"pairsUsed":1176,"tradingDays":253},{"year":1981,"meanAbsCorrelation":0.583729,"pairsUsed":1176,"tradingDays":253},{"year":1982,"meanAbsCorrelation":0.647971,"pairsUsed":1176,"tradingDays":253},{"year":1983,"meanAbsCorrelation":0.542918,"pairsUsed":1176,"tradingDays":253},{"year":1984,"meanAbsCorrelation":0.573549,"pairsUsed":1176,"tradingDays":253},{"year":1985,"meanAbsCorrelation":0.489702,"pairsUsed":1176,"tradingDays":252},{"year":1986,"meanAbsCorrelation":0.563451,"pairsUsed":1176,"tradingDays":253},{"year":1987,"meanAbsCorrelation":0.769118,"pairsUsed":1176,"tradingDays":253},{"year":1988,"meanAbsCorrelation":0.638489,"pairsUsed":1176,"tradingDays":253},{"year":1989,"meanAbsCorrelation":0.543218,"pairsUsed":1176,"tradingDays":252},{"year":1990,"meanAbsCorrelation":0.591545,"pairsUsed":1176,"tradingDays":253},{"year":1991,"meanAbsCorrelation":0.524869,"pairsUsed":1176,"tradingDays":253},{"year":1992,"meanAbsCorrelation":0.386122,"pairsUsed":1176,"tradingDays":254},{"year":1993,"meanAbsCorrelation":0.30446,"pairsUsed":1176,"tradingDays":253},{"year":1994,"meanAbsCorrelation":0.432339,"pairsUsed":1176,"tradingDays":252},{"year":1995,"meanAbsCorrelation":0.283743,"pairsUsed":1176,"tradingDays":252},{"year":1996,"meanAbsCorrelation":0.435636,"pairsUsed":1176,"tradingDays":254},{"year":1997,"meanAbsCorrelation":0.521111,"pairsUsed":1176,"tradingDays":253},{"year":1998,"meanAbsCorrelation":0.496577,"pairsUsed":1176,"tradingDays":252},{"year":1999,"meanAbsCorrelation":0.284697,"pairsUsed":1176,"tradingDays":252},{"year":2000,"meanAbsCorrelation":0.281988,"pairsUsed":1176,"tradingDays":252},{"year":2001,"meanAbsCorrelation":0.391307,"pairsUsed":1176,"tradingDays":248},{"year":2002,"meanAbsCorrelation":0.526745,"pairsUsed":1176,"tradingDays":252},{"year":2003,"meanAbsCorrelation":0.540282,"pairsUsed":1176,"tradingDays":252},{"year":2004,"meanAbsCorrelation":0.492121,"pairsUsed":1176,"tradingDays":252},{"year":2005,"meanAbsCorrelation":0.52636,"pairsUsed":1176,"tradingDays":252},{"year":2006,"meanAbsCorrelation":0.501239,"pairsUsed":1176,"tradingDays":251},{"year":2007,"meanAbsCorrelation":0.658878,"pairsUsed":1176,"tradingDays":251},{"year":2008,"meanAbsCorrelation":0.74715,"pairsUsed":1176,"tradingDays":253},{"year":2009,"meanAbsCorrelation":0.668881,"pairsUsed":1176,"tradingDays":252},{"year":2010,"meanAbsCorrelation":0.732815,"pairsUsed":1176,"tradingDays":252},{"year":2011,"meanAbsCorrelation":0.805021,"pairsUsed":1176,"tradingDays":252},{"year":2012,"meanAbsCorrelation":0.622307,"pairsUsed":1176,"tradingDays":250},{"year":2013,"meanAbsCorrelation":0.585944,"pairsUsed":1176,"tradingDays":252},{"year":2014,"meanAbsCorrelation":0.578371,"pairsUsed":1176,"tradingDays":252},{"year":2015,"meanAbsCorrelation":0.62393,"pairsUsed":1176,"tradingDays":252},{"year":2016,"meanAbsCorrelation":0.547326,"pairsUsed":1176,"tradingDays":252},{"year":2017,"meanAbsCorrelation":0.336399,"pairsUsed":1176,"tradingDays":251},{"year":2018,"meanAbsCorrelation":0.556605,"pairsUsed":1176,"tradingDays":251},{"year":2019,"meanAbsCorrelation":0.490256,"pairsUsed":1176,"tradingDays":252},{"year":2020,"meanAbsCorrelation":0.720167,"pairsUsed":1176,"tradingDays":253},{"year":2021,"meanAbsCorrelation":0.445914,"pairsUsed":1176,"tradingDays":252},{"year":2022,"meanAbsCorrelation":0.602725,"pairsUsed":1176,"tradingDays":251},{"year":2023,"meanAbsCorrelation":0.474433,"pairsUsed":1176,"tradingDays":250},{"year":2024,"meanAbsCorrelation":0.379863,"pairsUsed":1176,"tradingDays":252},{"year":2025,"meanAbsCorrelation":0.458964,"pairsUsed":1176,"tradingDays":250},{"year":2026,"meanAbsCorrelation":0.325318,"pairsUsed":1176,"tradingDays":61}];
+    async function loadData() {
+      try {
+        return await d3.json('../data/figure-1-yearly-correlation.json');
+      } catch {
+        return FALLBACK_DATA;
+      }
+    }
+    const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+    function showTooltip(event, html) {
+      tooltip.html(html)
+        .style('left', (event.pageX + 12) + 'px')
+        .style('top', (event.pageY - 28) + 'px')
+        .transition().duration(150).style('opacity', 1);
+    }
+    function moveTooltip(event) {
+      tooltip
+        .style('left', (event.pageX + 12) + 'px')
+        .style('top', (event.pageY - 28) + 'px');
+    }
+    function hideTooltip() {
+      tooltip.transition().duration(100).style('opacity', 0);
+    }
+    
+function addHeader(svg, margin, title, subtitle) {
+  svg.append('text').attr('class', 'chart-title').attr('x', margin.left).attr('y', 24).text(title);
+  svg.append('text').attr('class', 'chart-subtitle').attr('x', margin.left).attr('y', 44).attr('font-size', 13).text(subtitle);
+}
+function addSource(svg, margin, totalHeight, source) {
+  svg.append('text').attr('class', 'source-line').attr('x', margin.left).attr('y', totalHeight - 4).attr('font-size', 11).text(source);
+}
+function finishAxes(g) {
+  g.selectAll('.domain').attr('class', 'axis-domain').attr('stroke', 'var(--color-ink)');
+  g.selectAll('.tick text').attr('font-size', 11);
+}
+
+const recessions = [
+  { label: 'Great Depression', year: 1929 },
+  { label: 'Oil embargo', year: 1973 },
+  { label: 'Dot-com', year: 2001 },
+  { label: 'GFC', year: 2008 },
+  { label: 'COVID', year: 2020 }
+];
+function draw(data) {
+  d3.select('#chart').selectAll('*').remove();
+  const container = document.getElementById('chart');
+  const totalWidth = container.clientWidth || 1000;
+  const totalHeight = Math.max(560, Math.round(totalWidth * 0.46));
+  const margin = { top: 72, right: 40, bottom: 72, left: 72 };
+  const chartWidth = totalWidth - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top - margin.bottom;
+  const svg = d3.select('#chart').append('svg').attr('width', totalWidth).attr('height', totalHeight).attr('role', 'img').attr('aria-labelledby', 'fig-title fig-desc');
+  svg.append('title').attr('id', 'fig-title').text('Mean absolute cross-industry correlation by year');
+  svg.append('desc').attr('id', 'fig-desc').text('Yearly mean absolute pairwise return correlation across Fama-French 49 industry portfolios.');
+  addHeader(svg, margin, 'Mean absolute cross-industry correlation by year', 'Fama-French 49 daily industry portfolios, value-weighted returns');
+  const gChart = svg.append('g').attr('class', 'g-chart').attr('transform', `translate(${margin.left},${margin.top})`);
+  const xScaleUtc = d3.scaleUtc().domain(d3.extent(data, d => new Date(Date.UTC(d.year, 0, 1)))).range([0, chartWidth]);
+  const yScaleLinear = d3.scaleLinear().domain([0, Math.max(0.85, d3.max(data, d => d.meanAbsCorrelation) * 1.08)]).nice().range([chartHeight, 0]);
+  const area = d3.area().x(d => xScaleUtc(new Date(Date.UTC(d.year, 0, 1)))).y0(chartHeight).y1(d => yScaleLinear(d.meanAbsCorrelation));
+  const line = d3.line().x(d => xScaleUtc(new Date(Date.UTC(d.year, 0, 1)))).y(d => yScaleLinear(d.meanAbsCorrelation));
+  gChart.append('g').attr('class', 'g-gridlines').call(d3.axisLeft(yScaleLinear).ticks(6).tickSize(-chartWidth).tickFormat('')).selectAll('line').attr('class', 'gridline').attr('stroke-opacity', 0.6);
+  gChart.select('.g-gridlines .domain').remove();
+  gChart.append('path').datum(data).attr('fill', 'var(--color-red)').attr('fill-opacity', 0.13).attr('d', area);
+  gChart.append('path').datum(data).attr('fill', 'none').attr('stroke', 'var(--color-red)').attr('stroke-width', 2.25).attr('d', line);
+  gChart.selectAll('.data-point').data(data).join('circle').attr('class', 'data-point').attr('cx', d => xScaleUtc(new Date(Date.UTC(d.year, 0, 1)))).attr('cy', d => yScaleLinear(d.meanAbsCorrelation)).attr('r', 3).attr('fill', 'var(--color-white)').attr('stroke', 'var(--color-red)').attr('stroke-width', 1.5).attr('opacity', 0).attr('tabindex', 0).attr('aria-label', d => `${d.year}: mean absolute correlation ${d.meanAbsCorrelation.toFixed(3)}`).on('mouseover focus', function(event, d) { d3.select(this).attr('opacity', 1).attr('r', 4.5); showTooltip(event, `<strong>${d.year}</strong><br>Mean |rho|: ${d.meanAbsCorrelation.toFixed(3)}<br>Pairs used: ${d.pairsUsed}`); }).on('mousemove', moveTooltip).on('mouseout blur', function() { d3.select(this).attr('opacity', 0).attr('r', 3); hideTooltip(); });
+  const gAnnotations = gChart.append('g').attr('class', 'g-annotations');
+  gAnnotations.selectAll('.event-line').data(recessions).join('line').attr('x1', d => xScaleUtc(new Date(Date.UTC(d.year, 0, 1)))).attr('x2', d => xScaleUtc(new Date(Date.UTC(d.year, 0, 1)))).attr('y1', 0).attr('y2', chartHeight).attr('stroke', 'var(--color-ink)').attr('stroke-width', 1).attr('stroke-dasharray', '4 4').attr('stroke-opacity', 0.28);
+  gAnnotations.selectAll('.annotation-label').data(recessions).join('text').attr('class', 'annotation-label').attr('x', d => xScaleUtc(new Date(Date.UTC(d.year, 0, 1))) + 4).attr('y', 16).attr('font-size', 11).text(d => d.label);
+  gChart.append('g').attr('transform', `translate(0,${chartHeight})`).call(d3.axisBottom(xScaleUtc).ticks(d3.utcYear.every(10)).tickFormat(d3.utcFormat('%Y')));
+  gChart.append('g').call(d3.axisLeft(yScaleLinear).ticks(6).tickFormat(d3.format('.1f')));
+  finishAxes(gChart);
+  svg.append('text').attr('class', 'axis-label').attr('x', margin.left + chartWidth / 2).attr('y', totalHeight - 24).attr('text-anchor', 'middle').attr('font-size', 12).text('Year');
+  svg.append('text').attr('class', 'axis-label').attr('transform', `translate(20,${margin.top + chartHeight / 2}) rotate(-90)`).attr('text-anchor', 'middle').attr('font-size', 12).text('Mean absolute correlation');
+  addSource(svg, margin, totalHeight, 'Source: Kenneth R. French Data Library, 49 Industry Portfolios Daily, downloaded 2026-05-26.');
+}
+loadData().then(data => { draw(data); new ResizeObserver(() => draw(data)).observe(document.getElementById('chart')); });
+  </script>
+</body>
+</html>

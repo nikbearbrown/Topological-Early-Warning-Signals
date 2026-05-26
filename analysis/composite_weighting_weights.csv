@@ -1,0 +1,16 @@
+composite,component,column,weight
+Equal-weight baseline,H0 landscape L1,h0_landscape_l1_z,0.2
+Equal-weight baseline,-H1 landscape L1,neg_h1_landscape_l1_z,0.2
+Equal-weight baseline,-beta1,neg_beta1_z,0.2
+Equal-weight baseline,-TP H0,neg_total_persistence_h0_z,0.2
+Equal-weight baseline,-TP H1,neg_total_persistence_h1_z,0.2
+PCA PC1,H0 landscape L1,h0_landscape_l1_z,-0.1914030376220957
+PCA PC1,-H1 landscape L1,neg_h1_landscape_l1_z,0.2049313633006034
+PCA PC1,-beta1,neg_beta1_z,0.19177529289768983
+PCA PC1,-TP H0,neg_total_persistence_h0_z,0.1959990010566245
+PCA PC1,-TP H1,neg_total_persistence_h1_z,0.21589130512298665
+Ledoit-Wolf min-var,H0 landscape L1,h0_landscape_l1_z,0.5001665358471896
+Ledoit-Wolf min-var,-H1 landscape L1,neg_h1_landscape_l1_z,0.01253243721117072
+Ledoit-Wolf min-var,-beta1,neg_beta1_z,-0.013195612934086496
+Ledoit-Wolf min-var,-TP H0,neg_total_persistence_h0_z,0.49852795235204334
+Ledoit-Wolf min-var,-TP H1,neg_total_persistence_h1_z,0.0019686875236827185

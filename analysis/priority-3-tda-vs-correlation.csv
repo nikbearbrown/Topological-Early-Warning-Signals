@@ -1,0 +1,10 @@
+metric,value
+"corr(composite_z, mean_abs_corr)",0.5197341731977271
+R2 composite_z ~ mean_abs_corr,0.27012361078952585
+residual recession Cohen d,0.2876535781033222
+residual Welch p-value,7.850516199302974e-92
+AUC mean_abs_corr,0.6283295412552908
+AUC composite_z,0.6597252669991504
+AUC residual_vs_corr,0.5786429429681622
+AUC logit mean_abs_corr,0.6283295412552908
+AUC logit mean_abs_corr + TDA residual,0.6742406629873188

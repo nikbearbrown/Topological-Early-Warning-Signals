@@ -4,3 +4,8 @@ output/
 *.docx
 .DS_Store
 node_modules/
+.venv/
+.mplconfig/
+.cache/
+__pycache__/
+*.pyc

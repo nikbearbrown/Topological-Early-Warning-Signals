@@ -1,0 +1,15 @@
+{
+  "description": "Schematic graph examples for beta1 loop-count intuition.",
+  "left": {
+    "nodes": 9,
+    "edges": 8,
+    "components": 1,
+    "beta1": 0
+  },
+  "right": {
+    "nodes": 9,
+    "edges": 16,
+    "components": 1,
+    "beta1": 8
+  }
+}

@@ -1,0 +1,291 @@
+{
+  "notes": "Generated cross-correlation profile matching manuscript: small positive lead association around 31 trading days and stronger contemporaneous/post-onset association.",
+  "rows": [
+    {
+      "lag": -100,
+      "correlation": -0.0129
+    },
+    {
+      "lag": -95,
+      "correlation": -0.0118
+    },
+    {
+      "lag": -90,
+      "correlation": -0.0097
+    },
+    {
+      "lag": -85,
+      "correlation": -0.0069
+    },
+    {
+      "lag": -80,
+      "correlation": -0.0037
+    },
+    {
+      "lag": -75,
+      "correlation": -0.0005
+    },
+    {
+      "lag": -70,
+      "correlation": 0.0023
+    },
+    {
+      "lag": -65,
+      "correlation": 0.0047
+    },
+    {
+      "lag": -60,
+      "correlation": 0.0067
+    },
+    {
+      "lag": -55,
+      "correlation": 0.0086
+    },
+    {
+      "lag": -50,
+      "correlation": 0.0107
+    },
+    {
+      "lag": -45,
+      "correlation": 0.0134
+    },
+    {
+      "lag": -40,
+      "correlation": 0.0171
+    },
+    {
+      "lag": -35,
+      "correlation": 0.0219
+    },
+    {
+      "lag": -30,
+      "correlation": 0.0277
+    },
+    {
+      "lag": -25,
+      "correlation": 0.0341
+    },
+    {
+      "lag": -20,
+      "correlation": 0.041
+    },
+    {
+      "lag": -15,
+      "correlation": 0.0482
+    },
+    {
+      "lag": -10,
+      "correlation": 0.0558
+    },
+    {
+      "lag": -5,
+      "correlation": 0.0639
+    },
+    {
+      "lag": 0,
+      "correlation": 0.0725
+    },
+    {
+      "lag": 5,
+      "correlation": 0.0815
+    },
+    {
+      "lag": 10,
+      "correlation": 0.0903
+    },
+    {
+      "lag": 15,
+      "correlation": 0.098
+    },
+    {
+      "lag": 20,
+      "correlation": 0.1038
+    },
+    {
+      "lag": 25,
+      "correlation": 0.1069
+    },
+    {
+      "lag": 30,
+      "correlation": 0.1066
+    },
+    {
+      "lag": 35,
+      "correlation": 0.1029
+    },
+    {
+      "lag": 40,
+      "correlation": 0.096
+    },
+    {
+      "lag": 45,
+      "correlation": 0.0865
+    },
+    {
+      "lag": 50,
+      "correlation": 0.0754
+    },
+    {
+      "lag": 55,
+      "correlation": 0.0637
+    },
+    {
+      "lag": 60,
+      "correlation": 0.0522
+    },
+    {
+      "lag": 65,
+      "correlation": 0.0419
+    },
+    {
+      "lag": 70,
+      "correlation": 0.0331
+    },
+    {
+      "lag": 75,
+      "correlation": 0.0261
+    },
+    {
+      "lag": 80,
+      "correlation": 0.0209
+    },
+    {
+      "lag": 85,
+      "correlation": 0.0171
+    },
+    {
+      "lag": 90,
+      "correlation": 0.0144
+    },
+    {
+      "lag": 95,
+      "correlation": 0.0121
+    },
+    {
+      "lag": 100,
+      "correlation": 0.01
+    },
+    {
+      "lag": 105,
+      "correlation": 0.0075
+    },
+    {
+      "lag": 110,
+      "correlation": 0.0047
+    },
+    {
+      "lag": 115,
+      "correlation": 0.0014
+    },
+    {
+      "lag": 120,
+      "correlation": -0.002
+    },
+    {
+      "lag": 125,
+      "correlation": -0.0052
+    },
+    {
+      "lag": 130,
+      "correlation": -0.0077
+    },
+    {
+      "lag": 135,
+      "correlation": -0.0091
+    },
+    {
+      "lag": 140,
+      "correlation": -0.009
+    },
+    {
+      "lag": 145,
+      "correlation": -0.0069
+    },
+    {
+      "lag": 150,
+      "correlation": -0.0028
+    },
+    {
+      "lag": 155,
+      "correlation": 0.0031
+    },
+    {
+      "lag": 160,
+      "correlation": 0.0104
+    },
+    {
+      "lag": 165,
+      "correlation": 0.0185
+    },
+    {
+      "lag": 170,
+      "correlation": 0.0262
+    },
+    {
+      "lag": 175,
+      "correlation": 0.0326
+    },
+    {
+      "lag": 180,
+      "correlation": 0.0367
+    },
+    {
+      "lag": 185,
+      "correlation": 0.038
+    },
+    {
+      "lag": 190,
+      "correlation": 0.0361
+    },
+    {
+      "lag": 195,
+      "correlation": 0.0315
+    },
+    {
+      "lag": 200,
+      "correlation": 0.0248
+    },
+    {
+      "lag": 205,
+      "correlation": 0.017
+    },
+    {
+      "lag": 210,
+      "correlation": 0.009
+    },
+    {
+      "lag": 215,
+      "correlation": 0.002
+    },
+    {
+      "lag": 220,
+      "correlation": -0.0035
+    },
+    {
+      "lag": 225,
+      "correlation": -0.0071
+    },
+    {
+      "lag": 230,
+      "correlation": -0.0086
+    },
+    {
+      "lag": 235,
+      "correlation": -0.0084
+    },
+    {
+      "lag": 240,
+      "correlation": -0.0068
+    },
+    {
+      "lag": 245,
+      "correlation": -0.0044
+    },
+    {
+      "lag": 250,
+      "correlation": -0.0017
+    }
+  ],
+  "peakLag": 31,
+  "peakCorrelation": 0.1
+}

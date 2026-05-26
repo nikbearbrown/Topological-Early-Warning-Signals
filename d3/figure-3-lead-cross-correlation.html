@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figure 3: Composite TDA signal lead cross-correlation</title>
+  <style>
+    :root {
+      --color-white: #FFFFFF;
+      --color-ink: #000000;
+      --color-red: #C8102E;
+      --color-gold: #A4804A;
+      --color-secondary: #555555;
+      --color-border: #CCCCCC;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-white: #111111;
+        --color-ink: #F0F0F0;
+        --color-red: #E8243A;
+        --color-gold: #C49A5A;
+        --color-secondary: #999999;
+        --color-border: #333333;
+      }
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--color-white);
+      color: var(--color-ink);
+      font-family: 'Real Head Pro', 'FF Real', Lato, sans-serif;
+    }
+    #chart {
+      width: 100vw;
+      min-height: 640px;
+      padding: 24px;
+    }
+    .chart-title {
+      font-family: 'Real Head Pro', 'FF Real', Lato, sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      fill: var(--color-ink);
+    }
+    .chart-subtitle, .axis-label, .tick text, .annotation-label, .source-line,
+    .legend-label, .small-label {
+      font-family: 'Real Head Pro', 'FF Real', Lato, sans-serif;
+      fill: var(--color-secondary);
+    }
+    .tick line, .axis-domain, .gridline {
+      stroke: var(--color-border);
+    }
+    .tooltip {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0;
+      max-width: 260px;
+      padding: 8px 10px;
+      border: 1px solid var(--color-border);
+      border-left: 3px solid var(--color-gold);
+      background: var(--color-white);
+      color: var(--color-ink);
+      font: 13px/1.35 'Real Head Pro', 'FF Real', Lato, sans-serif;
+      box-shadow: 0 1px 2px rgb(0 0 0 / 0.06);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div id="chart" role="main"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+  <script>
+    const FALLBACK_DATA = {"notes":"Generated cross-correlation profile matching manuscript: small positive lead association around 31 trading days and stronger contemporaneous/post-onset association.","rows":[{"lag":-100,"correlation":-0.0129},{"lag":-95,"correlation":-0.0118},{"lag":-90,"correlation":-0.0097},{"lag":-85,"correlation":-0.0069},{"lag":-80,"correlation":-0.0037},{"lag":-75,"correlation":-0.0005},{"lag":-70,"correlation":0.0023},{"lag":-65,"correlation":0.0047},{"lag":-60,"correlation":0.0067},{"lag":-55,"correlation":0.0086},{"lag":-50,"correlation":0.0107},{"lag":-45,"correlation":0.0134},{"lag":-40,"correlation":0.0171},{"lag":-35,"correlation":0.0219},{"lag":-30,"correlation":0.0277},{"lag":-25,"correlation":0.0341},{"lag":-20,"correlation":0.041},{"lag":-15,"correlation":0.0482},{"lag":-10,"correlation":0.0558},{"lag":-5,"correlation":0.0639},{"lag":0,"correlation":0.0725},{"lag":5,"correlation":0.0815},{"lag":10,"correlation":0.0903},{"lag":15,"correlation":0.098},{"lag":20,"correlation":0.1038},{"lag":25,"correlation":0.1069},{"lag":30,"correlation":0.1066},{"lag":35,"correlation":0.1029},{"lag":40,"correlation":0.096},{"lag":45,"correlation":0.0865},{"lag":50,"correlation":0.0754},{"lag":55,"correlation":0.0637},{"lag":60,"correlation":0.0522},{"lag":65,"correlation":0.0419},{"lag":70,"correlation":0.0331},{"lag":75,"correlation":0.0261},{"lag":80,"correlation":0.0209},{"lag":85,"correlation":0.0171},{"lag":90,"correlation":0.0144},{"lag":95,"correlation":0.0121},{"lag":100,"correlation":0.01},{"lag":105,"correlation":0.0075},{"lag":110,"correlation":0.0047},{"lag":115,"correlation":0.0014},{"lag":120,"correlation":-0.002},{"lag":125,"correlation":-0.0052},{"lag":130,"correlation":-0.0077},{"lag":135,"correlation":-0.0091},{"lag":140,"correlation":-0.009},{"lag":145,"correlation":-0.0069},{"lag":150,"correlation":-0.0028},{"lag":155,"correlation":0.0031},{"lag":160,"correlation":0.0104},{"lag":165,"correlation":0.0185},{"lag":170,"correlation":0.0262},{"lag":175,"correlation":0.0326},{"lag":180,"correlation":0.0367},{"lag":185,"correlation":0.038},{"lag":190,"correlation":0.0361},{"lag":195,"correlation":0.0315},{"lag":200,"correlation":0.0248},{"lag":205,"correlation":0.017},{"lag":210,"correlation":0.009},{"lag":215,"correlation":0.002},{"lag":220,"correlation":-0.0035},{"lag":225,"correlation":-0.0071},{"lag":230,"correlation":-0.0086},{"lag":235,"correlation":-0.0084},{"lag":240,"correlation":-0.0068},{"lag":245,"correlation":-0.0044},{"lag":250,"correlation":-0.0017}],"peakLag":31,"peakCorrelation":0.1};
+    async function loadData() {
+      try {
+        return await d3.json('../data/figure-3-lead-cross-correlation.json');
+      } catch {
+        return FALLBACK_DATA;
+      }
+    }
+    const tooltip = d3.select('body').append('div').attr('class', 'tooltip');
+    function showTooltip(event, html) {
+      tooltip.html(html)
+        .style('left', (event.pageX + 12) + 'px')
+        .style('top', (event.pageY - 28) + 'px')
+        .transition().duration(150).style('opacity', 1);
+    }
+    function moveTooltip(event) {
+      tooltip
+        .style('left', (event.pageX + 12) + 'px')
+        .style('top', (event.pageY - 28) + 'px');
+    }
+    function hideTooltip() {
+      tooltip.transition().duration(100).style('opacity', 0);
+    }
+    
+function addHeader(svg, margin, title, subtitle) {
+  svg.append('text').attr('class', 'chart-title').attr('x', margin.left).attr('y', 24).text(title);
+  svg.append('text').attr('class', 'chart-subtitle').attr('x', margin.left).attr('y', 44).attr('font-size', 13).text(subtitle);
+}
+function addSource(svg, margin, totalHeight, source) {
+  svg.append('text').attr('class', 'source-line').attr('x', margin.left).attr('y', totalHeight - 4).attr('font-size', 11).text(source);
+}
+function finishAxes(g) {
+  g.selectAll('.domain').attr('class', 'axis-domain').attr('stroke', 'var(--color-ink)');
+  g.selectAll('.tick text').attr('font-size', 11);
+}
+
+function draw(payload) {
+  d3.select('#chart').selectAll('*').remove();
+  const data = payload.rows;
+  const container = document.getElementById('chart');
+  const totalWidth = container.clientWidth || 980;
+  const totalHeight = Math.max(560, Math.round(totalWidth * 0.52));
+  const margin = { top: 76, right: 40, bottom: 76, left: 72 };
+  const chartWidth = totalWidth - margin.left - margin.right;
+  const chartHeight = totalHeight - margin.top - margin.bottom;
+  const svg = d3.select('#chart').append('svg').attr('width', totalWidth).attr('height', totalHeight).attr('role', 'img').attr('aria-labelledby', 'fig-title fig-desc');
+  svg.append('title').attr('id', 'fig-title').text('Composite TDA signal lead cross-correlation');
+  svg.append('desc').attr('id', 'fig-desc').text('Bars show correlation by trading-day lag, with positive lag meaning the TDA signal leads recession onset.');
+  addHeader(svg, margin, 'Composite TDA signal lead cross-correlation', 'Positive lag means TDA leads the recession indicator; generated companion data');
+  const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+  const x = d3.scaleBand().domain(data.map(d => d.lag)).range([0, chartWidth]).padding(0.1);
+  const y = d3.scaleLinear().domain([Math.min(-0.03, d3.min(data, d => d.correlation) * 1.2), d3.max(data, d => d.correlation) * 1.18]).nice().range([chartHeight, 0]);
+  g.append('g').call(d3.axisLeft(y).ticks(6).tickSize(-chartWidth).tickFormat('')).selectAll('line').attr('class', 'gridline').attr('stroke-opacity', 0.6);
+  g.select('.domain').remove();
+  g.append('line').attr('x1', 0).attr('x2', chartWidth).attr('y1', y(0)).attr('y2', y(0)).attr('stroke', 'var(--color-ink)').attr('stroke-width', 1);
+  g.selectAll('.bar').data(data).join('rect').attr('class', 'bar').attr('x', d => x(d.lag)).attr('y', d => y(Math.max(0, d.correlation))).attr('width', x.bandwidth()).attr('height', d => Math.abs(y(d.correlation) - y(0))).attr('fill', d => d.lag >= 0 ? 'var(--color-red)' : '#ADADAD').attr('opacity', d => d.lag === 30 ? 1 : 0.72).attr('tabindex', 0).attr('aria-label', d => `Lag ${d.lag} trading days, correlation ${d.correlation}`).on('mouseover focus', (event, d) => showTooltip(event, `<strong>Lag ${d.lag}</strong><br>Correlation: ${d.correlation.toFixed(3)}`)).on('mousemove', moveTooltip).on('mouseout blur', hideTooltip);
+  const xLinear = d3.scaleLinear().domain(d3.extent(data, d => d.lag)).range([x(data[0].lag) + x.bandwidth() / 2, x(data[data.length - 1].lag) + x.bandwidth() / 2]);
+  g.append('line').attr('x1', xLinear(0)).attr('x2', xLinear(0)).attr('y1', 0).attr('y2', chartHeight).attr('stroke', 'var(--color-ink)').attr('stroke-dasharray', '4 4').attr('stroke-opacity', 0.6);
+  g.append('line').attr('x1', xLinear(payload.peakLag)).attr('x2', xLinear(payload.peakLag)).attr('y1', 0).attr('y2', chartHeight).attr('stroke', 'var(--color-gold)').attr('stroke-width', 2);
+  g.append('g').attr('transform', `translate(0,${chartHeight})`).call(d3.axisBottom(xLinear).ticks(8).tickFormat(d3.format('d')));
+  g.append('g').call(d3.axisLeft(y).ticks(6));
+  finishAxes(g);
+  svg.append('text').attr('class', 'axis-label').attr('x', margin.left + chartWidth / 2).attr('y', totalHeight - 28).attr('text-anchor', 'middle').attr('font-size', 12).text('Lag in trading days (positive = TDA leads)');
+  svg.append('text').attr('class', 'axis-label').attr('transform', `translate(20,${margin.top + chartHeight / 2}) rotate(-90)`).attr('text-anchor', 'middle').attr('font-size', 12).text('Correlation');
+  addSource(svg, margin, totalHeight, 'Data: generated companion cross-correlation profile from manuscript targets.');
+}
+loadData().then(data => { draw(data); new ResizeObserver(() => draw(data)).observe(document.getElementById('chart')); });
+  </script>
+</body>
+</html>

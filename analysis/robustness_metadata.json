@@ -1,0 +1,93 @@
+{
+  "task": "Priority 1.1 rolling window robustness",
+  "windows": [
+    60,
+    120,
+    252
+  ],
+  "min_assets": 20,
+  "beta1_definition": "maximum number of simultaneous finite H1 intervals across the filtration",
+  "missing_rule": "window-level listwise deletion",
+  "nber_recessions": [
+    [
+      "1929-08-01",
+      "1933-03-01",
+      "Great Depression"
+    ],
+    [
+      "1937-05-01",
+      "1938-06-01",
+      "1937-1938 recession"
+    ],
+    [
+      "1945-02-01",
+      "1945-10-01",
+      "Postwar recession"
+    ],
+    [
+      "1948-11-01",
+      "1949-10-01",
+      "1948-1949 recession"
+    ],
+    [
+      "1953-07-01",
+      "1954-05-01",
+      "1953-1954 recession"
+    ],
+    [
+      "1957-08-01",
+      "1958-04-01",
+      "1957-1958 recession"
+    ],
+    [
+      "1960-04-01",
+      "1961-02-01",
+      "1960-1961 recession"
+    ],
+    [
+      "1969-12-01",
+      "1970-11-01",
+      "1969-1970 recession"
+    ],
+    [
+      "1973-11-01",
+      "1975-03-01",
+      "1973-1975 recession"
+    ],
+    [
+      "1980-01-01",
+      "1980-07-01",
+      "1980 recession"
+    ],
+    [
+      "1981-07-01",
+      "1982-11-01",
+      "1981-1982 recession"
+    ],
+    [
+      "1990-07-01",
+      "1991-03-01",
+      "1990-1991 recession"
+    ],
+    [
+      "2001-03-01",
+      "2001-11-01",
+      "2001 recession"
+    ],
+    [
+      "2007-12-01",
+      "2009-06-01",
+      "Global Financial Crisis"
+    ],
+    [
+      "2020-02-01",
+      "2020-04-01",
+      "COVID recession"
+    ]
+  ],
+  "outputs": [
+    "analysis/rolling_window_robustness_summary.csv",
+    "analysis/priority-1-1-rolling-window-robustness.md",
+    "analysis/missing_by_industry.csv"
+  ]
+}

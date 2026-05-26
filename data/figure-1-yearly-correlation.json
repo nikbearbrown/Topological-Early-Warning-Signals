@@ -1,0 +1,608 @@
+[
+  {
+    "year": 1926,
+    "meanAbsCorrelation": 0.256022,
+    "pairsUsed": 780,
+    "tradingDays": 150
+  },
+  {
+    "year": 1927,
+    "meanAbsCorrelation": 0.237198,
+    "pairsUsed": 820,
+    "tradingDays": 301
+  },
+  {
+    "year": 1928,
+    "meanAbsCorrelation": 0.382446,
+    "pairsUsed": 820,
+    "tradingDays": 295
+  },
+  {
+    "year": 1929,
+    "meanAbsCorrelation": 0.589388,
+    "pairsUsed": 861,
+    "tradingDays": 291
+  },
+  {
+    "year": 1930,
+    "meanAbsCorrelation": 0.445465,
+    "pairsUsed": 903,
+    "tradingDays": 298
+  },
+  {
+    "year": 1931,
+    "meanAbsCorrelation": 0.498566,
+    "pairsUsed": 903,
+    "tradingDays": 300
+  },
+  {
+    "year": 1932,
+    "meanAbsCorrelation": 0.471357,
+    "pairsUsed": 903,
+    "tradingDays": 302
+  },
+  {
+    "year": 1933,
+    "meanAbsCorrelation": 0.589659,
+    "pairsUsed": 903,
+    "tradingDays": 285
+  },
+  {
+    "year": 1934,
+    "meanAbsCorrelation": 0.527797,
+    "pairsUsed": 903,
+    "tradingDays": 301
+  },
+  {
+    "year": 1935,
+    "meanAbsCorrelation": 0.36794,
+    "pairsUsed": 903,
+    "tradingDays": 301
+  },
+  {
+    "year": 1936,
+    "meanAbsCorrelation": 0.398423,
+    "pairsUsed": 903,
+    "tradingDays": 301
+  },
+  {
+    "year": 1937,
+    "meanAbsCorrelation": 0.608907,
+    "pairsUsed": 903,
+    "tradingDays": 299
+  },
+  {
+    "year": 1938,
+    "meanAbsCorrelation": 0.596826,
+    "pairsUsed": 903,
+    "tradingDays": 301
+  },
+  {
+    "year": 1939,
+    "meanAbsCorrelation": 0.539082,
+    "pairsUsed": 903,
+    "tradingDays": 300
+  },
+  {
+    "year": 1940,
+    "meanAbsCorrelation": 0.548118,
+    "pairsUsed": 903,
+    "tradingDays": 302
+  },
+  {
+    "year": 1941,
+    "meanAbsCorrelation": 0.418594,
+    "pairsUsed": 903,
+    "tradingDays": 301
+  },
+  {
+    "year": 1942,
+    "meanAbsCorrelation": 0.316046,
+    "pairsUsed": 903,
+    "tradingDays": 301
+  },
+  {
+    "year": 1943,
+    "meanAbsCorrelation": 0.461708,
+    "pairsUsed": 903,
+    "tradingDays": 301
+  },
+  {
+    "year": 1944,
+    "meanAbsCorrelation": 0.386975,
+    "pairsUsed": 903,
+    "tradingDays": 298
+  },
+  {
+    "year": 1945,
+    "meanAbsCorrelation": 0.473086,
+    "pairsUsed": 903,
+    "tradingDays": 286
+  },
+  {
+    "year": 1946,
+    "meanAbsCorrelation": 0.67782,
+    "pairsUsed": 903,
+    "tradingDays": 281
+  },
+  {
+    "year": 1947,
+    "meanAbsCorrelation": 0.533311,
+    "pairsUsed": 903,
+    "tradingDays": 283
+  },
+  {
+    "year": 1948,
+    "meanAbsCorrelation": 0.557369,
+    "pairsUsed": 903,
+    "tradingDays": 283
+  },
+  {
+    "year": 1949,
+    "meanAbsCorrelation": 0.440026,
+    "pairsUsed": 903,
+    "tradingDays": 282
+  },
+  {
+    "year": 1950,
+    "meanAbsCorrelation": 0.516788,
+    "pairsUsed": 903,
+    "tradingDays": 281
+  },
+  {
+    "year": 1951,
+    "meanAbsCorrelation": 0.421147,
+    "pairsUsed": 903,
+    "tradingDays": 283
+  },
+  {
+    "year": 1952,
+    "meanAbsCorrelation": 0.31227,
+    "pairsUsed": 903,
+    "tradingDays": 271
+  },
+  {
+    "year": 1953,
+    "meanAbsCorrelation": 0.441809,
+    "pairsUsed": 903,
+    "tradingDays": 251
+  },
+  {
+    "year": 1954,
+    "meanAbsCorrelation": 0.294151,
+    "pairsUsed": 903,
+    "tradingDays": 252
+  },
+  {
+    "year": 1955,
+    "meanAbsCorrelation": 0.498752,
+    "pairsUsed": 903,
+    "tradingDays": 252
+  },
+  {
+    "year": 1956,
+    "meanAbsCorrelation": 0.411001,
+    "pairsUsed": 903,
+    "tradingDays": 251
+  },
+  {
+    "year": 1957,
+    "meanAbsCorrelation": 0.494823,
+    "pairsUsed": 903,
+    "tradingDays": 252
+  },
+  {
+    "year": 1958,
+    "meanAbsCorrelation": 0.329097,
+    "pairsUsed": 903,
+    "tradingDays": 252
+  },
+  {
+    "year": 1959,
+    "meanAbsCorrelation": 0.341014,
+    "pairsUsed": 903,
+    "tradingDays": 253
+  },
+  {
+    "year": 1960,
+    "meanAbsCorrelation": 0.401895,
+    "pairsUsed": 903,
+    "tradingDays": 252
+  },
+  {
+    "year": 1961,
+    "meanAbsCorrelation": 0.294318,
+    "pairsUsed": 903,
+    "tradingDays": 250
+  },
+  {
+    "year": 1962,
+    "meanAbsCorrelation": 0.636686,
+    "pairsUsed": 903,
+    "tradingDays": 252
+  },
+  {
+    "year": 1963,
+    "meanAbsCorrelation": 0.42008,
+    "pairsUsed": 1081,
+    "tradingDays": 251
+  },
+  {
+    "year": 1964,
+    "meanAbsCorrelation": 0.256562,
+    "pairsUsed": 1081,
+    "tradingDays": 253
+  },
+  {
+    "year": 1965,
+    "meanAbsCorrelation": 0.393402,
+    "pairsUsed": 1128,
+    "tradingDays": 252
+  },
+  {
+    "year": 1966,
+    "meanAbsCorrelation": 0.522102,
+    "pairsUsed": 1128,
+    "tradingDays": 252
+  },
+  {
+    "year": 1967,
+    "meanAbsCorrelation": 0.392492,
+    "pairsUsed": 1128,
+    "tradingDays": 251
+  },
+  {
+    "year": 1968,
+    "meanAbsCorrelation": 0.44216,
+    "pairsUsed": 1128,
+    "tradingDays": 226
+  },
+  {
+    "year": 1969,
+    "meanAbsCorrelation": 0.540535,
+    "pairsUsed": 1176,
+    "tradingDays": 250
+  },
+  {
+    "year": 1970,
+    "meanAbsCorrelation": 0.637114,
+    "pairsUsed": 1176,
+    "tradingDays": 254
+  },
+  {
+    "year": 1971,
+    "meanAbsCorrelation": 0.534972,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1972,
+    "meanAbsCorrelation": 0.40357,
+    "pairsUsed": 1176,
+    "tradingDays": 251
+  },
+  {
+    "year": 1973,
+    "meanAbsCorrelation": 0.58824,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 1974,
+    "meanAbsCorrelation": 0.634917,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1975,
+    "meanAbsCorrelation": 0.575613,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1976,
+    "meanAbsCorrelation": 0.550563,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1977,
+    "meanAbsCorrelation": 0.525224,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 1978,
+    "meanAbsCorrelation": 0.683942,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 1979,
+    "meanAbsCorrelation": 0.630739,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1980,
+    "meanAbsCorrelation": 0.624967,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1981,
+    "meanAbsCorrelation": 0.583729,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1982,
+    "meanAbsCorrelation": 0.647971,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1983,
+    "meanAbsCorrelation": 0.542918,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1984,
+    "meanAbsCorrelation": 0.573549,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1985,
+    "meanAbsCorrelation": 0.489702,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 1986,
+    "meanAbsCorrelation": 0.563451,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1987,
+    "meanAbsCorrelation": 0.769118,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1988,
+    "meanAbsCorrelation": 0.638489,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1989,
+    "meanAbsCorrelation": 0.543218,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 1990,
+    "meanAbsCorrelation": 0.591545,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1991,
+    "meanAbsCorrelation": 0.524869,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1992,
+    "meanAbsCorrelation": 0.386122,
+    "pairsUsed": 1176,
+    "tradingDays": 254
+  },
+  {
+    "year": 1993,
+    "meanAbsCorrelation": 0.30446,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1994,
+    "meanAbsCorrelation": 0.432339,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 1995,
+    "meanAbsCorrelation": 0.283743,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 1996,
+    "meanAbsCorrelation": 0.435636,
+    "pairsUsed": 1176,
+    "tradingDays": 254
+  },
+  {
+    "year": 1997,
+    "meanAbsCorrelation": 0.521111,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 1998,
+    "meanAbsCorrelation": 0.496577,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 1999,
+    "meanAbsCorrelation": 0.284697,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2000,
+    "meanAbsCorrelation": 0.281988,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2001,
+    "meanAbsCorrelation": 0.391307,
+    "pairsUsed": 1176,
+    "tradingDays": 248
+  },
+  {
+    "year": 2002,
+    "meanAbsCorrelation": 0.526745,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2003,
+    "meanAbsCorrelation": 0.540282,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2004,
+    "meanAbsCorrelation": 0.492121,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2005,
+    "meanAbsCorrelation": 0.52636,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2006,
+    "meanAbsCorrelation": 0.501239,
+    "pairsUsed": 1176,
+    "tradingDays": 251
+  },
+  {
+    "year": 2007,
+    "meanAbsCorrelation": 0.658878,
+    "pairsUsed": 1176,
+    "tradingDays": 251
+  },
+  {
+    "year": 2008,
+    "meanAbsCorrelation": 0.74715,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 2009,
+    "meanAbsCorrelation": 0.668881,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2010,
+    "meanAbsCorrelation": 0.732815,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2011,
+    "meanAbsCorrelation": 0.805021,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2012,
+    "meanAbsCorrelation": 0.622307,
+    "pairsUsed": 1176,
+    "tradingDays": 250
+  },
+  {
+    "year": 2013,
+    "meanAbsCorrelation": 0.585944,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2014,
+    "meanAbsCorrelation": 0.578371,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2015,
+    "meanAbsCorrelation": 0.62393,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2016,
+    "meanAbsCorrelation": 0.547326,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2017,
+    "meanAbsCorrelation": 0.336399,
+    "pairsUsed": 1176,
+    "tradingDays": 251
+  },
+  {
+    "year": 2018,
+    "meanAbsCorrelation": 0.556605,
+    "pairsUsed": 1176,
+    "tradingDays": 251
+  },
+  {
+    "year": 2019,
+    "meanAbsCorrelation": 0.490256,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2020,
+    "meanAbsCorrelation": 0.720167,
+    "pairsUsed": 1176,
+    "tradingDays": 253
+  },
+  {
+    "year": 2021,
+    "meanAbsCorrelation": 0.445914,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2022,
+    "meanAbsCorrelation": 0.602725,
+    "pairsUsed": 1176,
+    "tradingDays": 251
+  },
+  {
+    "year": 2023,
+    "meanAbsCorrelation": 0.474433,
+    "pairsUsed": 1176,
+    "tradingDays": 250
+  },
+  {
+    "year": 2024,
+    "meanAbsCorrelation": 0.379863,
+    "pairsUsed": 1176,
+    "tradingDays": 252
+  },
+  {
+    "year": 2025,
+    "meanAbsCorrelation": 0.458964,
+    "pairsUsed": 1176,
+    "tradingDays": 250
+  },
+  {
+    "year": 2026,
+    "meanAbsCorrelation": 0.325318,
+    "pairsUsed": 1176,
+    "tradingDays": 61
+  }
+]

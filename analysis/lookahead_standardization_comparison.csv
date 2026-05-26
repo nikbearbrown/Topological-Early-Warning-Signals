@@ -1,0 +1,3 @@
+standardization,panel,window,signal,n,n_recession,expansion_mean,recession_mean,cohen_d,p_value,auc
+retrospective full-sample expansion baseline,retrospective,60,Composite Z,26153,4218,2.073158654599791e-17,0.26350468957801215,0.4810594446603564,0.0,0.6597252669991504
+expanding prior expansion baseline,expanding,60,Composite Z,25901,4218,-0.1536487412008629,0.19081904502868186,0.5313548367675303,1.7918702335321838e-300,0.6760000399742423

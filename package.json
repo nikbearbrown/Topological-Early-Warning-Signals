@@ -4,6 +4,11 @@
   "type": "module",
   "description": "Topological Early Warning Signals",
   "scripts": {
+    "generate-d3": "node SCRIPTS/generate-neu-d3-figures.mjs",
+    "robustness": ".venv/bin/python SCRIPTS/run_tda_robustness.py",
+    "composite-sensitivity": ".venv/bin/python SCRIPTS/run_composite_sensitivity.py",
+    "priority-3": ".venv/bin/python SCRIPTS/run_priority_3.py",
+    "priority-4": ".venv/bin/python SCRIPTS/run_priority_4.py",
     "svg-to-png": "node SCRIPTS/svg-to-png.mjs"
   },
   "dependencies": {

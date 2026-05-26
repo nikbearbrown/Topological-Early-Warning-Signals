@@ -1,0 +1,2 @@
+signal,n,n_recession,mean_difference,cohen_d,block_length,bootstrap_reps,bootstrap_se,bootstrap_p_value,ci_2_5,ci_97_5
+TDA residual vs. mean abs corr,26153,4218,0.1359442050682722,0.2876535781033222,252,1000,0.060565190929773575,0.024794270997960638,0.01863991467957229,0.25468944680179306
