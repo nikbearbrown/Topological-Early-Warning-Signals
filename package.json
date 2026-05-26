@@ -1,0 +1,13 @@
+{
+  "name": "topological-early-warning-signals",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Topological Early Warning Signals",
+  "scripts": {
+    "svg-to-png": "node SCRIPTS/svg-to-png.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.0",
+    "glob": "^10.0.0"
+  }
+}
