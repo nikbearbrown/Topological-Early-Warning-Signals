@@ -62,7 +62,7 @@ The choice of *W* = 60 is motivated by a window-comparison exercise: among windo
 
 Figure 1 plots the mean absolute cross-industry correlation by year. The series exhibits substantial time variation: peaks coincide with the Great Depression, the 1970s oil shocks, the Global Financial Crisis, and the COVID-19 shock, while the postwar expansion period and the 1990s bull market correspond to lower average co-movement. This variation motivates the topological approach: average correlation captures the *intensity* of co-movement, while persistent homology targets its *shape*.
 
-![Mean absolute cross-industry correlation by year for FF49 daily industry portfolios, with major crisis episodes annotated.](images/figure-1.png)
+![Mean absolute cross-industry correlation by year for FF49 daily industry portfolios, with major crisis episodes annotated.](../images/figure-1.png)
 *Figure 1: Mean Absolute Cross-Industry Correlation*
 
 ### 3.2 Topological Signals and Recession Regimes
@@ -82,7 +82,7 @@ Table 1 reports expansion means, recession means, Cohen's *d*, and two-sample *p
 
 *Notes: All signals standardized on expansion days. Larger values indicate more crisis-like topology. The composite is the equal-weighted average of the five oriented, standardized components.*
 
-![Three-panel time series of TDA crisis signals for FF49 daily industry portfolios, with NBER recession bands and spike markers.](images/figure-2.png)
+![Three-panel time series of TDA crisis signals for FF49 daily industry portfolios, with NBER recession bands and spike markers.](../images/figure-2.png)
 *Figure 2: TDA Crisis Signals Across Recession Regimes*
 
 The dominant pattern is β1 collapse. During recessions, the number of independent loops in the industry co-movement graph falls — industries move together in a simpler, more tree-like structure, with fewer independent cycles of partial co-movement. This geometric simplification is the central empirical finding.
@@ -95,7 +95,7 @@ The dominant pattern is β1 collapse. During recessions, the number of independe
 
 Figure 3 plots the cross-correlation function between the composite topological signal and the NBER recession indicator at leads of up to 250 trading days, alongside an event-study plot aligned to recession onset. The cross-correlation profile shows a small positive-lag association at approximately 31 trading days (correlation ≈ 0.10), but the stronger signal is contemporaneous or post-onset. The event-study confirms: the composite Z begins rising modestly in the weeks before recession onset but the bulk of the elevation occurs during, not before, the recession window.
 
-![Lead-time analysis for the composite TDA signal, including cross-correlation, recession-onset event study, and recession-episode heatmap.](images/figure-3.png)
+![Lead-time analysis for the composite TDA signal, including cross-correlation, recession-onset event study, and recession-episode heatmap.](../images/figure-3.png)
 *Figure 3: Composite TDA Signal Lead-Time Analysis*
 
 This pattern rules out the TDA signal as a long-lead recession predictor. The appropriate characterization is a regime descriptor, not an early warning indicator in the forecasting sense.
@@ -104,7 +104,7 @@ This pattern rules out the TDA signal as a long-lead recession predictor. The ap
 
 Table 2 reports cross-validated AUC for seven classification models using the daily NBER recession indicator as the outcome. The best naive benchmark — volatility plus lagged returns — achieves AUC = 0.783. TDA alone achieves AUC = 0.671, which is meaningfully above random (0.500) but 11.2 percentage points below the naive benchmark. Adding TDA to the full naive suite (volatility + returns + average correlation) produces AUC = 0.736, still 4.7 percentage points below the best naive model and lower than volatility-plus-returns alone.
 
-![ROC curves comparing TDA-only, volatility-only, average-correlation-only, baseline, and TDA-plus-baseline classifiers.](images/figure-4.png)
+![ROC curves comparing TDA-only, volatility-only, average-correlation-only, baseline, and TDA-plus-baseline classifiers.](../images/figure-4.png)
 *Figure 4: ROC Curves for TDA and Baseline Recession Classifiers*
 
 **Table 2: Cross-Validated AUC for Recession Classification**
@@ -127,7 +127,7 @@ The classification evidence is unambiguous: TDA captures a statistically meaning
 
 Table 3 reports OLS predictive regressions of future industrial production growth on the composite topological signal at horizons of 1, 3, 6, and 12 months, alongside comparable regressions for 60-day volatility and lagged monthly returns. Standard errors are Newey–West HAC throughout.
 
-![Scatterplot panels of composite TDA signal against future industrial-production growth at one-, three-, six-, and twelve-month horizons.](images/figure-5.png)
+![Scatterplot panels of composite TDA signal against future industrial-production growth at one-, three-, six-, and twelve-month horizons.](../images/figure-5.png)
 *Figure 5: Composite TDA Signal and Future Industrial-Production Growth*
 
 **Table 3: Predictive Regressions for Industrial Production Growth**
